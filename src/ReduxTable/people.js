@@ -123,6 +123,7 @@ EnhancedTableHead.propTypes = {
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
+    marginTop:45,
   },
   paper: {
     width: "100%",
