@@ -172,15 +172,10 @@ function ResponsiveDrawer(props) {
        <AccountBox />Profile
         </MenuItem>
         
-        {localStorage.getItem("email").length > 0 && (
+        
          <MenuItem >
            <Logout  onClick={handleLogout} />Log Out
-        </MenuItem> )}
-
-        {localStorage.getItem("email").length === 0 && (
-         <MenuItem >
-           <Logout   component={RouterLink}  to={"/profile"} />Log in
-        </MenuItem> )}
+        </MenuItem>
       </Menu>
      
       <div
