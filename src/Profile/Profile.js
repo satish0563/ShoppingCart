@@ -9,8 +9,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: "1",
   },
   avatar: {
-   width: theme.spacing(13),
+    width: theme.spacing(13),
     height: theme.spacing(13),
+    marginTop:54,
   
   },
   form :{
@@ -77,7 +78,7 @@ function Profile() {
        <div className={classes.spacer} />
     <Button  color="primary" variant="contained">Upload Image</Button>
     </Content>
-    <form onSubmit={submitForm} style={{  width:200,textAlign: 'left',marginTop:40,marginLeft:60}}>
+    <form onSubmit={submitForm} style={{  width:200,textAlign: 'left',marginTop:90,marginLeft:60}}>
     <label htmlFor="name">Full Name</label>
     <input  id="name" style={{marginBottom:30}}  type="text"  value={inputText.name} onChange={inputEvent} name="name" maxlength="25"  placeholder="Full Name" required/>
     <label htmlFor="name"> Email Address</label>
