@@ -27,9 +27,9 @@ media: {
   },
   header: {
     display: "flex",
-    position: "absolute",
+    position: "relative",
     width: "calc(112%)",
-    top: "-70px",
+    top: "-10px",
     alignItems: "flex-end",
     "& > *": {
       margin: `${theme.spacing(3)}px ${theme.spacing(1)}px`,
