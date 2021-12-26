@@ -191,7 +191,7 @@ function ResponsiveDrawer(props) {
           zIndex: -2,
         }}
       />
-      <AppBar position="sticky" className={isHome ? "" : ""}>
+      <AppBar position="fixed" className={isHome ? "" : ""}>
         <Toolbar>
           <IconButton
             color="inherit"
