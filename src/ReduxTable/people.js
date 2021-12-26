@@ -239,7 +239,7 @@ export default function People() {
           newSelectedmenu.length > 1 ? "s" : ""
         } Deleted`
       );
-     
+      setAnchorEl(null);
       event.stopPropagation();
 
     
