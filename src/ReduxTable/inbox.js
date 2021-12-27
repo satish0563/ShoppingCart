@@ -24,9 +24,8 @@ import { SummaryCard } from "../Inbox/Inboxval";
 import TableContainer from "@material-ui/core/TableContainer";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
-import Avatar from "@material-ui/core/Avatar";
 import TablePagination from "@material-ui/core/TablePagination";
-import AssistantPhoto from "@material-ui/icons/AssistantPhoto";
+import AssistantPhoto from "@material-ui/icons/EmojiFlags";
 import MoreVert from "@material-ui/icons/MoreVert";
 import Delete from "@material-ui/icons/Delete";
 import Archive from "@material-ui/icons/Archive";
@@ -34,9 +33,7 @@ import Email from "@material-ui/icons/Email";
 import SearchBar from "material-ui-search-bar";
 import Menu from '@material-ui/core//Menu';
 import MenuItem from '@material-ui/core//MenuItem';
-import ListItemIcon from '@material-ui/core//ListItemIcon';
-import Divider from '@material-ui/core//Divider';
-import { ja } from "date-fns/locale";
+
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -269,7 +266,7 @@ export default function Inbox() {
   const SetFlag = (event,ids,checkbox) => {
     if(ids && checkbox !=="checkbox")
     {
-      document.getElementById(ids).style.backgroundColor="#e8bae8";
+      document.getElementById(ids).style.backgroundColor="rgb(248 219 248)";
     }
     else
     {
@@ -278,7 +275,7 @@ export default function Inbox() {
       if(len>0)
       {
         for(var i=0 ; i<len; i++){
-          galleries[i].style.backgroundColor="#e8bae8";
+          galleries[i].style.backgroundColor="rgb(248 219 248)";
        }
       }
       else{
