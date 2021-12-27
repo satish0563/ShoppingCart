@@ -63,6 +63,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  
   active: {
     backgroundColor: theme.palette.action.selected,
   },
@@ -82,7 +83,9 @@ function ResponsiveDrawer(props) {
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-   
+    setTimeout(function(){var elements = document.getElementsByClassName('MuiPaper-root MuiMenu-paper MuiPopover-paper MuiPaper-elevation0 MuiPaper-rounded')
+    elements[0].style.top='50px';elements[0].style.left='1113px'}, 100); 
+    
   };
  
   const handleLogout = () => {
