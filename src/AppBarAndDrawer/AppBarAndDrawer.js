@@ -11,7 +11,6 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
-
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -51,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(3),
     [theme.breakpoints.up("sm")]: {
-      //display: "none",
+      
     },
   },
   toolbar: theme.mixins.toolbar,
@@ -74,7 +73,7 @@ function ResponsiveDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
   const { pathname } = useLocation();
-  const isHome = false; // pathname === "/";
+  const isHome = false; 
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleDrawerToggle = () => {
@@ -127,19 +126,15 @@ function ResponsiveDrawer(props) {
 
   return (
     <div className={classes.root}>
-
       <CssBaseline />
-      
       <Menu
         anchorEl={anchorEl}
         open={open}
         id="menu"
         onClose={handleClose}
         onClick={handleClose}
-        
         PaperProps={{
           elevation: 0,
-         
           sx: {
             overflow: 'visible',
             filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
@@ -171,11 +166,9 @@ function ResponsiveDrawer(props) {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
        
-        <MenuItem  component={RouterLink}  to={"/profile"}>
+       <MenuItem  component={RouterLink}  to={"/profile"}>
        <AccountBox />Profile
         </MenuItem>
-        
-        
          <MenuItem >
            <Logout  onClick={handleLogout} />Log Out
         </MenuItem>
@@ -233,8 +226,7 @@ function ResponsiveDrawer(props) {
         <div />
       ) : (
         <nav aria-label="mailbox folders">
-          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-          <Hidden smUp implementation="css">
+         <Hidden smUp implementation="css">
             <Drawer
               container={container}
               variant="temporary"
@@ -245,7 +237,7 @@ function ResponsiveDrawer(props) {
                 paper: classes.drawerPaper,
               }}
               ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
+                keepMounted: true, 
               }}
             >
               {drawer}
@@ -269,10 +261,7 @@ function ResponsiveDrawer(props) {
 }
 
 ResponsiveDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
+  
   container: PropTypes.instanceOf(
     typeof Element === "undefined" ? Object : Element
   ),

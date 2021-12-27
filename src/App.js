@@ -1,22 +1,16 @@
 import React from "react";
 import AppBarAndDrawer from "./AppBarAndDrawer/AppBarAndDrawer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { SignIn } from "./SignIn";
-import { Dashboard } from "./Dashboard/Dashboard";
-
 import { ThemeProvider } from "@material-ui/core/styles";
 import { useTheme } from "./theme";
 import { DataProvider } from "./Providers/DataProvider";
-import People from "./ReduxTable/people";
-
-
+import Inbox from "./ReduxTable/inbox";
 import ShopCart from "./ShopCart/Shop";
-import Components from "./components/Components";
-import Dashboardnew from "./Dashboardnew/Dashboardnew";
+import Dashboardnew from "./Dashboard/Dashboard";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 import { configureStore } from "@reduxjs/toolkit";
-import peopleReducer from "./ReduxTable/peopleSlice";
+import peopleReducer from "./ReduxTable/inboxSlice";
 import { Provider } from "react-redux";
 import Profile from "./Profile/Profile";
 
@@ -39,8 +33,7 @@ export default function App() {
                     currentTheme={currentTheme}
                     setCurrentTheme={setCurrentTheme}
                   />
-                  {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+                  
                   <Switch>
                    
                     <Route path="/profile">
@@ -56,7 +49,7 @@ export default function App() {
                     </Route>
                     
                    <Route path="/Inbox">
-                   <People />
+                   <Inbox />
                    </Route>
                     <Route path="/">
                       <ShopCart />
