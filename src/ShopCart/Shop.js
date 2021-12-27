@@ -21,6 +21,14 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 350,
     boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.3)",
     backgroundColor: "#fafafa",
+    "&:focus,&:hover,&$active": {
+      border : "1px solid #d814c9"
+    }
+},
+  chip:{
+  "&:focus,&:hover,&$active": {
+    border : "1px solid #d814c9"
+  }
 },
 media: {
     height:150
@@ -72,7 +80,7 @@ export default function ShopCart({ id }) {
   useEffect(() => {
     if(count===0)
     {
-      fetch("https://mocki.io/v1/f06aa14b-3e3d-488b-a239-6ffc53aae752")
+      fetch("https://mocki.io/v1/927d652b-2c52-43d6-914a-9eff3f54b74d")
       .then((res) => res.json())
       .then((data) => setData(data));
      
@@ -119,6 +127,7 @@ const handleCancel = (e) => {
   setData(dommydata);
  }
 
+ 
 
 const handleChange = (e,val) => {
   if(val !==undefined && val !=="" )
@@ -148,8 +157,8 @@ const handleChange = (e,val) => {
       />
       <div className={classes.headerContainer}>
         <div className={classes.header}>
-       <Chip variant={"outlined"} onClick={(event) =>handleCall(event,'LP')} label="Low Price" />
-          <Chip variant={"outlined"} onClick={(event) =>handleCall(event,'HP')} label="High Price" />
+       <Chip  className={classes.chip} variant={"outlined"} onClick={(event) =>handleCall(event,'LP')} label="Low Price" />
+          <Chip  className={classes.chip} variant={"outlined"} onClick={(event) =>handleCall(event,'HP')} label="High Price" />
           
           <div className={classes.spacer} />
           <SearchBar
@@ -184,8 +193,8 @@ const handleChange = (e,val) => {
       </Typography>
       <Grid container spacing={1}>
         {data.map((character) => (
-          <Grid item xs={12} sm={3} key={character.Price}>
-            <Card className={classes.card}>
+          <Grid  item xs={12} sm={3} key={character.Price}>
+            <Card id={character.id}  className={classes.card}>
               <CardMedia
                 className={classes.media}
                 image= {character.img} 
